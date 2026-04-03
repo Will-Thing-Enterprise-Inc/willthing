@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Thing Enterprise — IA para o conhecimento humano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink:    #1a1410;
+            --paper:  #f7f3ed;
+            --accent: #8b4513;
+            --muted:  #9a8878;
+            --card:   #f0ebe3;
+            --border: #e0d8ce;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--paper);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139,69,19,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            animation: fadeUp 1s ease both;
+        }
+
+        .eyebrow {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s both;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.35s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            color: var(--muted);
+            max-width: 560px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.5s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.65s both;
+        }
+
+        .btn-primary {
+            background: var(--ink);
+            color: var(--paper);
+            padding: 0.9rem 2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            letter-spacing: 0.05em;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--ink);
+            padding: 0.9rem 2rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            letter-spacing: 0.05em;
+            transition: border-color 0.2s, transform 0.15s;
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+        /* ── DIVISOR ── */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* ── MISSÃO ── */
+        .missao {
+            padding: 6rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .missao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .missao h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--ink);
+        }
+
+        .missao h2 em { font-style: italic; color: var(--accent); }
+
+        .missao-texto {
+            font-size: 0.97rem;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        .missao-texto p + p { margin-top: 1rem; }
+
+        /* ── PROJETOS ── */
+        .projetos {
+            padding: 6rem 2rem;
+            background: var(--card);
+        }
+
+        .projetos-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .projetos h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: var(--ink);
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .projeto-card {
+            background: var(--paper);
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: block;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(26,20,16,0.08);
+            border-color: var(--accent);
+        }
+
+        .projeto-tag {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .projeto-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            color: var(--ink);
+        }
+
+        .projeto-card p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .projeto-card .projeto-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: border-color 0.2s;
+        }
+
+        .projeto-card:hover .projeto-link { border-color: var(--accent); }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--ink);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ── ANIMAÇÕES ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── RESPONSIVO ── */
+        @media (max-width: 640px) {
+            .missao-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-cta { flex-direction: column; }
+            .btn-primary, .btn-secondary { text-align: center; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <p class="eyebrow">Will Thing Enterprise</p>
+            <h1>IA para o<br><em>conhecimento</em><br>humano</h1>
+            <p class="hero-desc">
+                Criamos experiências de inteligência artificial que democratizam
+                o acesso ao pensamento humano — dos grandes educadores aos
+                mestres da sabedoria universal.
+            </p>
+            <div class="hero-cta">
+                <a href="#projetos" class="btn-primary">Conhecer os projetos</a>
+                <a href="mailto:contact@willthing.ia.br" class="btn-secondary">Falar conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- MISSÃO -->
+    <section class="missao">
+        <p class="section-label">Missão</p>
+        <div class="missao-grid">
+            <h2>Tornar o<br>conhecimento<br><em>acessível</em></h2>
+            <div class="missao-texto">
+                <p>A Will Thing Enterprise desenvolve bots conversacionais baseados no pensamento de grandes pensadores — educadores, filósofos e mestres da sabedoria humana.</p>
+                <p>Acreditamos que a inteligência artificial tem o poder de aproximar as pessoas de ideias transformadoras, criando pontes entre o conhecimento acumulado pela humanidade e quem mais precisa dele.</p>
+                <p>Cada projeto nasce de uma pergunta simples: como a tecnologia pode servir à libertação humana?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="projetos" id="projetos">
+        <div class="projetos-inner">
+            <p class="section-label">Projetos</p>
+            <h2>Experiências em<br><em style="font-style:italic; color:var(--accent)">inteligência</em> viva</h2>
+            <div class="projetos-grid">
+
+                <a href="https://paulo-freire.willthing.ia.br" class="projeto-card">
+                    <p class="projeto-tag">Educação · IA</p>
+                    <h3>Paulo Freire</h3>
+                    <p>Um diálogo vivo com o pensamento de Paulo Freire — conscientização, pedagogia do oprimido e educação como prática da liberdade.</p>
+                    <span class="projeto-link">paulo-freire.willthing.ia.br →</span>
+                </a>
+
+                <a href="https://chizu.ia.br" class="projeto-card">
+                    <p class="projeto-tag">Zen · Sabedoria</p>
+                    <h3>Chizu</h3>
+                    <p>Mestre Zen digital — ensinamentos de Dogen, Thich Nhat Hanh, Osho e outros mestres do budismo zen para o cotidiano moderno.</p>
+                    <span class="projeto-link">chizu.ia.br →</span>
+                </a>
+
+                <div class="projeto-card" style="border-style: dashed; cursor: default;">
+                    <p class="projeto-tag">Em breve</p>
+                    <h3>Próximo projeto</h3>
+                    <p>Novos pensadores, novas experiências. A Will Thing Enterprise está sempre expandindo seu acervo de sabedoria humana.</p>
+                    <span class="projeto-link" style="color:var(--muted);">em desenvolvimento</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <span class="footer-brand">Will Thing Enterprise</span>
+        <nav class="footer-links">
+            <a href="mailto:contact@willthing.ia.br">contact@willthing.ia.br</a>
+            <a href="https://paulo-freire.willthing.ia.br">Paulo Freire</a>
+            <a href="https://chizu.ia.br">Chizu</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
