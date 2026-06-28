@@ -1,0 +1,87 @@
+site_name: WillThing
+site_description: O Bosque — Caderno do Bosque
+site_author: WillThing
+site_url: https://docs.willthing.ia.br/
+
+theme:
+
+  logo: assets/img/will_thing.png
+  favicon: assets/img/will_thing.png
+
+  name: material
+  language: pt-BR
+
+  palette:
+    scheme: default
+    primary: white
+    accent: brown
+
+  font:
+    text: DM Sans
+    code: JetBrains Mono
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+extra_css:
+  - assets/css/style.css
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+
+nav:
+
+  - Início:
+      - Bem-vindo: index.md
+
+  - O Bosque:
+      - Apresentação: bosque/index.md
+      - A Visão do Bosque: bosque/01-visao-do-bosque.md
+      - Os Princípios: bosque/02-principios.md
+      - O Caminho: bosque/03-o-caminho.md
+      - O Léxico do Bosque: bosque/04-lexico-do-bosque.md
+      - A Curadoria: bosque/05-curadoria.md
+      - Manifesto: bosque/manifesto.md
+
+  - Jardins:
+      - Os Jardins: jardins/index.md
+      - Jardim Chizu: jardins/chizu.md
+      - Jardim Kushi-ji: jardins/kushi-ji.md
+      - Jardim Educador: jardins/educador.md
+      - Jardim Buko: jardins/buko.md
+      - Como nasce um Jardim: jardins/como-criar-um-jardim.md
+
+  - Arquitetura:
+      - Visão Geral: arquitetura/index.md
+      - Core Compartilhado: arquitetura/core.md
+      - Acervo: arquitetura/acervo.md
+      - Pipeline: arquitetura/pipeline.md
+      - Infraestrutura: arquitetura/infraestrutura.md
+      - GitHub: arquitetura/github.md
+      - Deploy: arquitetura/deploy.md
+
+  - Comunidade:
+      - Apresentação: comunidade/index.md
+      - Código Aberto: comunidade/codigo-aberto.md
+      - Como Contribuir: comunidade/contribuindo.md
+      - Apoie o Bosque: comunidade/apoio.md
+
+  - Sobre:
+      - Copyright: sobre/copyright.md
+      - Aviso Legal: sobre/aviso-legal.md
