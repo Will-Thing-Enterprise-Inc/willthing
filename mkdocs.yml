@@ -35,7 +35,7 @@ markdown_extensions:
   - admonition
   - tables
   - toc:
-      permalink: true
+      permalink: false
   - attr_list
   - def_list
   - footnotes
@@ -82,6 +82,10 @@ nav:
       - Como Contribuir: comunidade/contribuindo.md
       - Apoie o Bosque: comunidade/apoio.md
 
+  - Sessões:
+      - Índice: sessoes/index.md
+      - 28 jun 2026: sessoes/2026-06-28.md
+    
   - Sobre:
       - Copyright: sobre/copyright.md
       - Aviso Legal: sobre/aviso-legal.md
