@@ -20,11 +20,11 @@ A tecnologia mudará. Os princípios aqui registrados permanecerão.
 
 | # | Capítulo |
 |---|---|
-| 01 | [A Visão do Bosque](01-visao-do-bosque.md) |
-| 02 | [Os Princípios](02-principios.md) |
-| 03 | [O Caminho](03-o-caminho.md) |
-| 04 | [O Léxico do Bosque](04-lexico-do-bosque.md) |
-| 05 | [A Curadoria](05-curadoria.md) |
+| 01 | [A Visão do Bosque](visao-do-bosque.md) |
+| 02 | [Os Princípios](principios.md) |
+| 03 | [O Caminho](o-caminho.md) |
+| 04 | [O Léxico do Bosque](lexico-do-bosque.md) |
+| 05 | [A Curadoria](curadoria.md) |
 
 ### Parte VI — A Síntese
 
@@ -54,7 +54,7 @@ Um Bosque nunca está completamente pronto. Ele está sempre vivo.
 
 ---
 
-🌿
+
 
 *Este caderno faz parte do Bosque.*
 *Os Jardins continuam crescendo.*
