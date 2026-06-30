@@ -52,11 +52,11 @@ nav:
 
   - O Bosque:
       - Apresentação: bosque/index.md
-      - A Visão do Bosque: bosque/01-visao-do-bosque.md
-      - Os Princípios: bosque/02-principios.md
-      - O Caminho: bosque/03-o-caminho.md
-      - O Léxico do Bosque: bosque/04-lexico-do-bosque.md
-      - A Curadoria: bosque/05-curadoria.md
+      - A Visão do Bosque: bosque/visao-do-bosque.md
+      - Os Princípios: bosque/principios.md
+      - O Caminho: bosque/o-caminho.md
+      - O Léxico do Bosque: bosque/lexico-do-bosque.md
+      - A Curadoria: bosque/curadoria.md
       - Manifesto: bosque/manifesto.md
 
   - Jardins:
